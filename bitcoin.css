@@ -1,0 +1,41 @@
+.jumbotron{
+	background:url("/home/santoku/Desktop/money_cover.jpeg"); 	background-size: 100%;
+	text-align: center;
+	opacity: 0.7;
+
+}
+
+body{
+	background: url("/home/santoku/Desktop/money.jpeg") no-repeat;
+	background-size: 100%;
+	
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+#h_jum{
+	font-family: 'Coda Caption', sans-serif;
+	opacity: 1;
+	color: #f9f8f7;
+}
+
+.text_enter{
+	width: 50%;
+	
+	margin:0 auto; 
+	font-size: 20px;
+}
+
+.sep{
+	margin-bottom: 30px;
+}
+
+.p{
+	font-family: 'Roboto', sans-serif;
+}

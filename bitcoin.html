@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bitcoin.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Coda+Caption:800|Roboto" rel="stylesheet"> 
+
+<!-- Latest compiled JavaScript -->
+
+	<title>
+		Bitcoin
+	</title>
+</head>
+<body>
+	<div class="jumbotron">
+  		<h1 id="h_jum">BIT it up!</h1> 
+  	</div>
+
+	<div class="container">
+		<div class="row text_enter">
+			<div class="col-12">
+				<div class="sep">
+				<p class="p">Enter the value!</p>
+				<input type="number" id="no" onkeyup="myfunc1()" >
+				</div>	
+			</div>
+			<div class="col-12">
+				<div class="sep">
+					<p class="p">And it is equalent to</p>
+					<input type="number" id="value" onkeyup="myfunc2()">		
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+	var ch=0;
+	$(document).ready(function(){
+			
+		$.ajax(
+				{url:"https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=INR",
+				method:"get",
+				success:function(result){
+						console.log(result.INR);
+						ch+=result.INR;
+						$("#no").val(1);
+						myfunc1();
+				},
+					
+				error:function(){
+					console.log("error");
+				},
+			})
+       
+    });
+
+    function myfunc1(){
+    		$("#value").val($("#no").val()*ch);
+			
+
+		}
+	function myfunc2(){
+	  		$("#no").val($("#value").val()/ch);
+	  }
+</script>
+
+
+
+</body>
+</html>
